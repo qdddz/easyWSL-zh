@@ -18,9 +18,9 @@
 
         <muxc:NavigationView x:Name="mainNavigation" PaneDisplayMode="Top" SelectionFollowsFocus="Enabled" IsBackButtonVisible="Collapsed" ItemInvoked="mainNavigation_ItemInvoked" Grid.Row="1">
             <muxc:NavigationView.MenuItems>
-                <muxc:NavigationViewItem Icon="Manage" Content="Manage distributions" x:Name="manageDistributionsButton" />
-                <muxc:NavigationViewItem Icon="Add" Content="Add new distribution" x:Name="addNewDistributionButton" />
-                <muxc:NavigationViewItem Icon="Sync" Content="Snapshots" x:Name="manageSnapshots" />
+                <muxc:NavigationViewItem Icon="Manage" Content="WSL 发行版管理" x:Name="manageDistributionsButton" />
+                <muxc:NavigationViewItem Icon="Add" Content="添加新的发行版" x:Name="addNewDistributionButton" />
+                <muxc:NavigationViewItem Icon="Sync" Content="WSL 快照" x:Name="manageSnapshots" />
             </muxc:NavigationView.MenuItems>
             <Frame x:Name="rootFrame"/>
         </muxc:NavigationView>

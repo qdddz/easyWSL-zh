@@ -22,45 +22,45 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0">
-                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Margin="0 0 0 20">Distribution details</TextBlock>
-                <TextBox x:Name="distroNameTextBox" Header="Distro name" Margin="10" IsSpellCheckEnabled="False"/>
-                <ComboBox x:Name="distroSourceComboBox" SelectionChanged="distroSourceComboBox_SelectionChanged" Header="Select distro source" PlaceholderText="Source" Width="200" Margin="10" SelectedIndex="0">
-                    <x:String>Supported distro list</x:String>
+                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Margin="0 0 0 20">新发行版详细信息</TextBlock>
+                <TextBox x:Name="distroNameTextBox" Header="新发行版名称" Margin="10" IsSpellCheckEnabled="False"/>
+                <ComboBox x:Name="distroSourceComboBox" SelectionChanged="distroSourceComboBox_SelectionChanged" Header="选择新发行版来源" PlaceholderText="Source" Width="200" Margin="10" SelectedIndex="0">
+                    <x:String>官方支持的发行版</x:String>
                     <x:String>Docker Hub</x:String>
-                    <x:String>Local hard drive</x:String>
+                    <x:String>本地存储</x:String>
                 </ComboBox>
                 <ListView x:Name="SupportedDistroListbox" Width="200" Height="300" Margin="10" Visibility="Visible" HorizontalAlignment="Left" BorderThickness="1" BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}" />
-                <Button x:Name="tarballFileChooserButton" Margin="10" Visibility="Collapsed" Click="ChooseDistroTarball">Browse</Button>
+                <Button x:Name="tarballFileChooserButton" Margin="10" Visibility="Collapsed" Click="ChooseDistroTarball">浏览</Button>
                 <TextBlock Margin="10" Visibility="Collapsed" x:Name="tarbalPath"></TextBlock>
                 <TextBox Margin="10" Visibility="Collapsed" x:Name="dockerImageTextBox" PlaceholderText="Specify image from Docker Hub" Header="Docker image" IsSpellCheckEnabled="False"/>
                 <StackPanel x:Name="dockerImageDescription" Visibility="Collapsed" Margin="10 0 10 10">
-                    <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}" Margin="0 5" >Supported image formats</TextBlock>
+                    <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}" Margin="0 5" >支持的Docker Image格式</TextBlock>
                     <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Margin="0 2">image:tag</TextBlock>
                     <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Margin="0 2">profile/image</TextBlock>
                     <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Margin="0 2" >profile/image:tag</TextBlock>
                 </StackPanel>
                 <StackPanel x:Name="tarballDescription" Visibility="Collapsed" Margin="10 0 10 10">
-                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}">Select a linux rootfs in *.tar or *.tar.bz format.</TextBlock>
+                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}">选择*.tar或者*.tar.bz格式的linux镜像</TextBlock>
                 </StackPanel>
-                <Button x:Name="registerDistroProceedButton" Style="{StaticResource AccentButtonStyle}" Content="Register distro" Margin="10" HorizontalAlignment="Left" Click="registerDistroProceedButton_Click"/>
+                <Button x:Name="registerDistroProceedButton" Style="{StaticResource AccentButtonStyle}" Content="创建新发行版" Margin="10" HorizontalAlignment="Left" Click="registerDistroProceedButton_Click"/>
             </StackPanel>
             <StackPanel x:Name="createUserStackPanel" Orientation="Vertical" Grid.Column="1" Visibility="Visible" Margin="30 0 0 0" Grid.Row="0">
-                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Margin="0 0 0 20">Configure user account</TextBlock>
-                <ToggleSwitch x:Name="newUserSwitch" Header="Do you want to add a new user?" OffContent="No" OnContent="Yes" IsOn="False" Margin="10" Toggled="newUserSwitch_Toggled"/>
-                <TextBox x:Name="userNameTextBox" Header="Username" Margin="10" Visibility="Collapsed" IsSpellCheckEnabled="False"/>
+                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Margin="0 0 0 20">配置账户信息</TextBlock>
+                <ToggleSwitch x:Name="newUserSwitch" Header="是否要添加新用户？" OffContent="No" OnContent="Yes" IsOn="False" Margin="10" Toggled="newUserSwitch_Toggled"/>
+                <TextBox x:Name="userNameTextBox" Header="用户名" Margin="10" Visibility="Collapsed" IsSpellCheckEnabled="False"/>
                 <Grid x:Name="passwordTextBoxGrid" Visibility="Collapsed">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-                    <PasswordBox AutomationProperties.Name="Simple PasswordBox" x:Name="password1TextBox" Header="Password" Margin="10" Grid.Column="0"/>
-                    <PasswordBox AutomationProperties.Name="Simple PasswordBox" x:Name="password2TextBox" Header="Confirm password" Margin="10" Grid.Column="1"/>
+                    <PasswordBox AutomationProperties.Name="Simple PasswordBox" x:Name="password1TextBox" Header="密码" Margin="10" Grid.Column="0"/>
+                    <PasswordBox AutomationProperties.Name="Simple PasswordBox" x:Name="password2TextBox" Header="确认密码" Margin="10" Grid.Column="1"/>
                 </Grid>
-                <ToggleSwitch x:Name="isAdminSwitch" Header="Make this user administrator?" OffContent="No" OnContent="Yes" IsOn="True" Margin="10" Visibility="Collapsed"></ToggleSwitch>
-                <ToggleSwitch x:Name="winHelloSwitch" Header="Enable Windows Hello as default sudo authentication (experimental)" OffContent="No" OnContent="Yes" IsOn="False" Margin="10" Visibility="Collapsed"></ToggleSwitch>
+                <ToggleSwitch x:Name="isAdminSwitch" Header="是否将此用户设为管理员？" OffContent="No" OnContent="Yes" IsOn="True" Margin="10" Visibility="Collapsed"></ToggleSwitch>
+                <ToggleSwitch x:Name="winHelloSwitch" Header="启用Windows Hello作为默认sudo身份验证(Experimental)" OffContent="No" OnContent="Yes" IsOn="False" Margin="10" Visibility="Collapsed"></ToggleSwitch>
             </StackPanel>
             <StackPanel x:Name="configureDevEnvStackPanel" Orientation="Vertical" Grid.Column="2" Visibility="Visible" Margin="30 0" Grid.Row="0">
-                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Margin="0 0 0 10">Set up development environment</TextBlock>
+                <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Margin="0 0 0 10">快速建立开发环境</TextBlock>
                 <TextBlock Style="{StaticResource BodyStrongTextBlockStyle}" Margin="0 0 0 20">(Experimental)</TextBlock>
                 <CheckBox x:Name="pythonCheckbox" Content="Python" FontWeight="SemiBold" Margin="0 10"/>
                 <CheckBox x:Name="nodeCheckbox" Content="Node.js" FontWeight="SemiBold" Margin="0 10"/>

@@ -87,7 +87,7 @@ namespace easyWSL
                 await showErrorModal();
                 return;
             }
-            if (newUserSwitch.IsOn == true && distroSource == "Supported distro list")
+            if (newUserSwitch.IsOn == true && distroSource == "官方支持的发行版")
             {
                 userName = userNameTextBox.Text;
                 if (userName == "" || userName.Contains(" "))
@@ -116,7 +116,7 @@ namespace easyWSL
 
             switch (distroSource)
             {
-                case "Supported distro list":
+                case "官方支持的发行版":
                     image = distrosSources[SupportedDistroListbox.SelectedItem as string];
                     registeringStatusTextBlock.Text = $"Downloading the {distroName} distribution";
                     registerDistroProgressBar.IsIndeterminate = false;
@@ -166,7 +166,7 @@ namespace easyWSL
                     await dockerDownloader.CombineLayers();
                     await RegisterDistro(distroName, Path.Combine(App.tmpDirectory.Path, "install.tar.bz"));
                     break;
-                case "Local hard drive":
+                case "本地存储":
                     if(File.Exists(distroTarballPath))
                     {
                         await RegisterDistro(distroName, distroTarballPath);
@@ -193,7 +193,7 @@ namespace easyWSL
             );
             await helpers.ExecuteCommandInWSLAsync(distroName, postInstallCommand);
 
-            if(distroSource == "Supported distro list")
+            if(distroSource == "官方支持的发行版")
             {
                 ShowProgressBar($"Configuring the {distroName} distrbution");
                 string configureCommand = String.Join(
@@ -419,7 +419,7 @@ namespace easyWSL
             distroSource = e.AddedItems[0].ToString();
             switch (distroSource)
             {
-                case "Supported distro list":
+                case "官方支持的发行版":
                     if (SupportedDistroListbox != null)
                     {
                         SupportedDistroListbox.Visibility = Visibility.Visible;
@@ -442,7 +442,7 @@ namespace easyWSL
                     dockerImageDescription.Visibility = Visibility.Visible;
                     tarballDescription.Visibility = Visibility.Collapsed;
                     break;
-                case "Local hard drive":
+                case "本地存储":
                     tarballFileChooserButton.Visibility = Visibility.Visible;
                     SupportedDistroListbox.Visibility = Visibility.Collapsed;
                     dockerImageTextBox.Visibility = Visibility.Collapsed;

@@ -9,8 +9,8 @@
 
     <StackPanel>
         <RichTextBlock>
-            <Paragraph>This application requires
-                <Hyperlink NavigateUri="https://docs.microsoft.com/en-us/windows/wsl/about">Windows Subsystem For Linux</Hyperlink> enabled on your machine. 
+            <Paragraph>此应用程序需要在你的电脑上启用
+                <Hyperlink NavigateUri="https://docs.microsoft.com/en-us/windows/wsl/about">Windows Subsystem For Linux</Hyperlink>
             </Paragraph>
         </RichTextBlock>
     </StackPanel>

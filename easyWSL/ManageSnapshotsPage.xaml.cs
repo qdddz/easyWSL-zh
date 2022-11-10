@@ -123,11 +123,11 @@ namespace easyWSL
 
             if (snapshotsList.Count == 0)
             {
-                snapshotsTitle.Text = $"There are no snapshots of {distro} distribution";
+                snapshotsTitle.Text = $"没有 {distro} 的快照";
             }
             else
             {
-                snapshotsTitle.Text = $"Snapshots of {distro} distribution";
+                snapshotsTitle.Text = $"{distro} 的快照";
             }
         }
 

@@ -16,13 +16,13 @@
             <RowDefinition Height="100" />
         </Grid.RowDefinitions>
         <CommandBar Background="Transparent" IsOpen="False" DefaultLabelPosition="Right" Grid.Row="0" HorizontalAlignment="Left">
-            <AppBarButton x:Name="addSnapshotButton" Icon="Add" Label="Add snapshot" Click="addSnapshotButton_Click" />
-            <AppBarButton x:Name="removeSnapshotButton" Icon="Remove" Label="Remove snapshot" Click="removeSnapshotButton_Click" />
-            <AppBarButton x:Name="registerDistroFromSnapshotButton" Icon="Play" Label="Register distro from snapshot" Click="registerDistroFromSnapshotButton_Click" />
-            <AppBarButton x:Name="openSnapshotsButton" Icon="OpenLocal" Label="Open snapshots folder" Click="openSnapshotsButton_Click" />
+            <AppBarButton x:Name="addSnapshotButton" Icon="Add" Label="新建快照" Click="addSnapshotButton_Click" />
+            <AppBarButton x:Name="removeSnapshotButton" Icon="Remove" Label="删除快照" Click="removeSnapshotButton_Click" />
+            <AppBarButton x:Name="registerDistroFromSnapshotButton" Icon="Play" Label="从快照中新建" Click="registerDistroFromSnapshotButton_Click" />
+            <AppBarButton x:Name="openSnapshotsButton" Icon="OpenLocal" Label="打开快照目录" Click="openSnapshotsButton_Click" />
         </CommandBar>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <ComboBox x:Name="distrosComboBox" SelectionChanged="distrosComboBox_SelectionChanged" Header="Select distribution" SelectedIndex="0" Margin="20" SelectionChangedTrigger="Committed" Width="200"></ComboBox>
+            <ComboBox x:Name="distrosComboBox" SelectionChanged="distrosComboBox_SelectionChanged" Header="选择发行版" SelectedIndex="0" Margin="20" SelectionChangedTrigger="Committed" Width="200"></ComboBox>
         </StackPanel>
         <StackPanel  Grid.Row="2">
             <TextBlock x:Name="snapshotsTitle"  Style="{StaticResource SubtitleTextBlockStyle}" Margin="20 0 0 20" ></TextBlock>
